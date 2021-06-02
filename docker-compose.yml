@@ -1,0 +1,39 @@
+version: "3.7"
+services:
+
+#Laravel App
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: laravel-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    ports:
+      - "8888:8008"
+    links:
+      - mysql
+    volumes:
+      - ./:/var/www
+
+  #Mysl Service
+  mysql:
+    image: mysql:8
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: boilerplate-arthur
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root\
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8090:80"
+    links:
+      - mysql
+    environment:
+      - PMA_HOST=mysql
+

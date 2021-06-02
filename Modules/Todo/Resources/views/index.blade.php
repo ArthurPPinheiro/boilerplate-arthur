@@ -24,7 +24,7 @@
                     @foreach ((new Modules\Todo\Entities\Entity)->getFillable() as $fillable)
                         <th scope="col" class="sort" data-sort="{{ Str::slug($fillable) }}">{{ $fillable }}</th>
                     @endforeach
-                    <th scope="col">Ações</th>
+                    <th class="text-center" scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody class="list">
@@ -35,17 +35,13 @@
                                 {{ $todo->$fillable }}
                             </td>
                         @endforeach
-                        <td class="text-right">
-                            <div class="dropdown">
-                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v"></i>
+                        <td class="text-center">
+                                <a class="btn btn-icon-only text-blue" href="{{ route('Admin.Todo.edit', $todo) }}" aria-expanded="false">
+                                    <i class="fas fa-edit"></i>
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
+                                <a class="btn btn-icon-only text-red" href="{{ route('Admin.Todo.delete', $todo) }}" aria-expanded="false">
+                                    <i class="fas fa-trash"></i>
+                                </a>
                         </td>
                     </tr>
                 @endforeach
