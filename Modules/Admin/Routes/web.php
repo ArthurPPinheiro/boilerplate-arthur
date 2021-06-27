@@ -12,10 +12,9 @@
 */
 
 Route::prefix('admin')->group(function() {
-    Route::get('/', 'AdminController@index');
+    Route::get('/', 'AdminController@index')->name('Admin.Dashboard');
     Route::get('/dashboard', 'AdminController@dashboard');
     Route::get('/icons', 'AdminController@icons');
-    Route::get('/login', 'AdminController@login');
     Route::get('/map', 'AdminController@map');
     Route::get('/maps', 'AdminController@maps');
     Route::get('/profile', 'AdminController@profile');

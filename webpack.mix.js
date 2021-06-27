@@ -70,9 +70,8 @@ mix.styles([
     'Modules/Admin/Resources/assets/vendor/nucleo/css/nucleo.css',
     'Modules/Admin/Resources/assets/vendor/nucleo/css/nucleo.css',
     'Modules/Admin/Resources/assets/vendor/nucleo/css/nucleo-svg.css',
-    'Modules/Admin/Resources/assets/css/all.css'
-
-
+    'Modules/Admin/Resources/assets/css/all.css',
+    'Modules/Admin/Resources/assets/scss/app.scss'
 
 ], 'public/adm/css/admin.css');
 

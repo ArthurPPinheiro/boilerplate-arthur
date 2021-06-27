@@ -35,13 +35,13 @@
                                 {{ $todo->$fillable }}
                             </td>
                         @endforeach
-                        <td class="text-center">
-                                <a class="btn btn-icon-only text-blue" href="{{ route('Admin.Todo.edit', $todo) }}" aria-expanded="false">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a class="btn btn-icon-only text-red" href="{{ route('Admin.Todo.delete', $todo) }}" aria-expanded="false">
-                                    <i class="fas fa-trash"></i>
-                                </a>
+                        <td class="text-center nowrap">
+                            <a class="btn btn-icon-only text-blue" href="{{ route('Admin.Todo.edit', $todo) }}" aria-expanded="false">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="btn btn-icon-only text-red" href="{{ route('Admin.Todo.delete', $todo) }}" aria-expanded="false">
+                                <i class="fas fa-trash"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

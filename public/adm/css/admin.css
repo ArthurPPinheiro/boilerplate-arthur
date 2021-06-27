@@ -23752,7 +23752,7 @@ textarea[resize='horizontal']
 {
     font-size: .8125rem;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .table.align-items-center td,
@@ -37014,3 +37014,7 @@ Stroke effects - Nucleo outline icons
     font-weight: 900
 }
 
+
+.nowrap{
+    white-space: nowrap;
+}

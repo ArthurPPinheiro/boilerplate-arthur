@@ -1,4 +1,22 @@
-TODO
-☐ Criar Banco e Migrations
-☐ Criar stubs das rotas e controller 
-☐ 
+-----  TODO:
+
+   # Laravel Modules:
+        ☐
+
+   # MediaLibrary:
+        ☐ Implementar spatie/laravel-medialibrary - https://spatie.be/docs/laravel-medialibrary/v9/introduction
+
+   # Permissions:
+        ☐ Implementar spatie/laravel-permissions - https://spatie.be/docs/laravel-permission/v4/introduction
+
+   # Pagamentos:
+
+        -- Front:
+            ☐ Criar telas de checkout para usar como base - (Login - Tela de pagamento / Checkout - Compra confirmada - Perfil)
+
+        -- Back:
+            ☐ Criar um service pra cada um dos principais gateways de pagamento (PagarMe - Pagseguro - Cielo - Paypal)
+            ☐ Envio de email para compra concluida - falha - etc.
+
+    # Ecommerece:
+        ☐ Implementar Vanilo - https://vanilo.io
