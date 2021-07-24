@@ -30,6 +30,12 @@
                   <span class="nav-link-text">Teste3</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Route::current()->getName() == 'Admin.User' ? 'active' : '' }}" href="{{ url('admin/user') }}">
+                  <i class="ni ni-tv-2 text-primary"></i>
+                  <span class="nav-link-text">Users</span>
+                </a>
+            </li>
           </ul>
           <!-- Divider -->
           <hr class="my-3">
