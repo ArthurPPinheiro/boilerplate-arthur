@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "bensampo/laravel-enum": "^3.4",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -13,6 +14,8 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "nwidart/laravel-modules": "^8.2",
+        "pagarme/pagarme-php": "^4.1",
+        "pagseguro/pagseguro-php-sdk": "^4.2",
         "spatie/laravel-permission": "^4.2"
     },
     "require-dev": {
