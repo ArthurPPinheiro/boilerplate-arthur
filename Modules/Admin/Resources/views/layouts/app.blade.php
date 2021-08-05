@@ -16,6 +16,8 @@
 
        {{-- Laravel Mix - CSS File --}}
        <link rel="stylesheet" href="{{ mix('adm/css/admin.css') }}">
+       <link rel="stylesheet" href="{{ mix('adm/css/vendor-admin.css') }}">
+
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -44,7 +46,7 @@
         @if(Session::has('type') && Session::get('type') == 'error')
             <script>
                 $( function(){
-                    toastr.success('{{ Session::get('message') }}')
+                    toastr.error('{{ Session::get('message') }}')
                 })
             </script>
         @endif
