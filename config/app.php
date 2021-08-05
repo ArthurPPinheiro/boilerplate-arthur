@@ -167,6 +167,7 @@ return [
          */
         Nwidart\Modules\LaravelModulesServiceProvider::class,
         'Kris\LaravelFormBuilder\FormBuilderServiceProvider',
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Application Service Providers...

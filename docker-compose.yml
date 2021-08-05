@@ -1,41 +1,36 @@
-# For more information: https://laravel.com/docs/sail
 version: '3'
 services:
-    laravel.app:
+    app:
         build:
-            context: ./docker/8.0
+            context: ./.docker/8.0
             dockerfile: Dockerfile
-            args:
-                WWWGROUP: '${WWWGROUP}'
         image: sail-8.0/app
         ports:
             - '8080:80'
         volumes:
             - '.:/var/www/html'
-        networks:
-            - sail
         depends_on:
+            - mysql
+            - phpmyadmin
+        links:
             - mysql
 
     mysql:
-        image: 'mysql:8.0'
-        ports:
-            - '3306:3306'
-        platform: linux/x86_64
-        environment:
-            MYSQL_ROOT_PASSWORD: 'password'
-            MYSQL_DATABASE: 'boilerplate-a'
-            MYSQL_USER: 'root'
-            MYSQL_PASSWORD: 'password'
-            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-        volumes:
-            - 'sailmysql:/var/lib/mysql'
-        networks:
-            - sail
-        healthcheck:
-          test: ["CMD", "mysqladmin", "ping", "password"]
-          retries: 3
-          timeout: 5s
+      restart: always
+      image: 'mysql:8.0'
+      platform: linux/x86_64
+      ports:
+          - '3306:3306'
+      environment:
+          MYSQL_ROOT_PASSWORD: 'password'
+          MYSQL_DATABASE: 'boilerplate-a'
+          MYSQL_USER: 'user'
+          MYSQL_PASSWORD: 'password'
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      volumes:
+          - 'boilerplate-mysql:/var/lib/mysql'
+      healthcheck:
+        test: ["CMD", "mysqladmin", "ping"]
 
     phpmyadmin:
       image: phpmyadmin/phpmyadmin
@@ -46,9 +41,6 @@ services:
       environment:
         - PMA_HOST=mysql
 
-networks:
-    sail:
-        driver: bridge
 volumes:
-    sailmysql:
-        driver: local
+  boilerplate-mysql:
+    driver: local

@@ -73,7 +73,9 @@ mix.styles([
     'Modules/Admin/Resources/assets/css/all.css',
     'Modules/Admin/Resources/assets/scss/app.scss'
 
-], 'public/adm/css/admin.css');
+], 'public/adm/css/vendor-admin.css');
+
+mix.sass('Modules/Admin/Resources/assets/scss/app.scss', 'public/adm/css/admin.css');
 
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [

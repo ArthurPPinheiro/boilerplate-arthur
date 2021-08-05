@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('admin')->group(function() {
+Route::middleware('web', 'auth')->prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('Admin.Dashboard');
     Route::get('/dashboard', 'AdminController@dashboard');
     Route::get('/icons', 'AdminController@icons');
