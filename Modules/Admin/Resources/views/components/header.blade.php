@@ -18,18 +18,22 @@
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Route::current()->getName() == 'Admin.Todo' ? 'active' : '' }}" href="{{ url('admin/todo') }}">
-                  <i class="ni ni-tv-2 text-primary"></i>
-                  <span class="nav-link-text">Todo</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Route::current()->getName() == 'Admin.Teste3' ? 'active' : '' }}" href="{{ url('admin/teste3') }}">
-                  <i class="ni ni-tv-2 text-primary"></i>
-                  <span class="nav-link-text">Teste3</span>
-                </a>
-            </li>
+            @can('users.view')
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::current()->getName() == 'Admin.Users' ? 'active' : '' }}" href="{{ url('admin/users') }}">
+                        <i class="ni ni-tv-2 text-primary"></i>
+                        <span class="nav-link-text">Users</span>
+                    </a>
+                </li>
+            @endcan
+            @can('users.view')
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::current()->getName() == 'Admin.Roles' ? 'active' : '' }}" href="{{ url('admin/roles') }}">
+                    <i class="ni ni-tv-2 text-primary"></i>
+                    <span class="nav-link-text">Roles</span>
+                    </a>
+                </li>
+            @endcan
           </ul>
           <!-- Divider -->
           <hr class="my-3">
@@ -94,10 +98,13 @@
                         <div class="dropdown-header noti-title">
                             <h6 class="text-overflow m-0">Meu Perfil</h6>
                         </div>
-                        <a href="#!" class="dropdown-item">
-                            <i class="ni ni-user-run"></i>
-                            <span>Logout</span>
-                        </a>
+                        <form action="{{ route('Logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item">
+                                <i class="ni ni-user-run"></i>
+                                <span>Logout</span>
+                            </button>
+                        </form>
                     </div>
                 </li>
             </ul>

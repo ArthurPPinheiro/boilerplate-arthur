@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Hash;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Routing\Controller;
@@ -31,12 +30,23 @@ class LoginController extends Controller
             Session::flash('type', 'success');
             Session::flash('message', 'Logado com sucesso!');
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('Admin.Login');
         }
 
         Session::flash('type', 'error');
         Session::flash('message', 'Verifique suas informações de login.');
 
         return redirect()->route('Admin.Login');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
