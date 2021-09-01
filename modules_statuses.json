@@ -6,5 +6,7 @@
     "Abc": true,
     "Teste3": true,
     "User": true,
-    "Users": true
+    "Users": true,
+    "Product": true,
+    "ProductCategories": true
 }

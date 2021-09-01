@@ -30,13 +30,13 @@ class LoginController extends Controller
             Session::flash('type', 'success');
             Session::flash('message', 'Logado com sucesso!');
 
-            return redirect()->intended('Admin.Login');
+            return redirect()->intended('ShowLogin');
         }
 
         Session::flash('type', 'error');
         Session::flash('message', 'Verifique suas informações de login.');
 
-        return redirect()->route('Admin.Login');
+        return redirect()->route('ShowLogin');
     }
 
     public function logout(Request $request)

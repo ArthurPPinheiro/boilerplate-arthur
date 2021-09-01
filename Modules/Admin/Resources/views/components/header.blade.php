@@ -18,6 +18,22 @@
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
+            @can('product.view')
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::current()->getName() == 'Admin.Dashboard' ? 'active' : '' }}" href="{{ route('Admin.Product') }}">
+                        <i class="ni ni-tv-2 text-primary"></i>
+                        <span class="nav-link-text">Produtos</span>
+                    </a>
+                </li>
+            @endcan
+            @can('productcategories.view')
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::current()->getName() == 'Admin.Dashboard' ? 'active' : '' }}" href="{{ route('Admin.ProductCategories') }}">
+                        <i class="ni ni-tv-2 text-primary"></i>
+                        <span class="nav-link-text">Categorias</span>
+                    </a>
+                </li>
+            @endcan
             @can('users.view')
                 <li class="nav-item">
                     <a class="nav-link {{ Route::current()->getName() == 'Admin.Users' ? 'active' : '' }}" href="{{ url('admin/users') }}">
