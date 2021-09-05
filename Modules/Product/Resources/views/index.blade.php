@@ -18,7 +18,7 @@
           </div>
           <!-- Light table -->
           <div class="table-responsive">
-            <table class="table align-items-center table-flush">
+            <table class="table align-items-center table-flush dataTable">
               <thead class="thead-light">
                 <tr>
                     @foreach ((new Modules\Product\Entities\Entity)->getFillable() as $fillable)
